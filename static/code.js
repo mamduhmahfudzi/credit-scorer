@@ -32,7 +32,7 @@ $(document).on('click','.button',function(e){
     else{
       // replace <username> with your pythonanywhere username
       // also make sure to make changes in the url as per your flask API argument names
-      var requestURL = "http://127.0.0.1:5000/predict/?Age="+Age+"&Sex="+Sex+"&Job="+Job+"&Housing="+Housing+"&saving_account="+saving_account+"&checking_account="+checking_account+"&credit_amount="+credit_amount+"&duration="+duration+"&purpose="+purpose;
+      var requestURL = "https://credit-scorer.herokuapp.com/predict/?Age="+Age+"&Sex="+Sex+"&Job="+Job+"&Housing="+Housing+"&saving_account="+saving_account+"&checking_account="+checking_account+"&credit_amount="+credit_amount+"&duration="+duration+"&purpose="+purpose;
       console.log(requestURL); // log the requestURL for troubleshooting
       $.getJSON(requestURL, function(data) {
         console.log(data); // log the data for troubleshooting
