@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../static/code.js"></script>
+    <title>german credit scoring</title>
+  </head>
+  <body>
+    <br>
+    <a><img class="logo" src="../static/credit.svg" alt=""></a>
+    <br>
+    <div class="container main">
+  <div class="jumbotron" id="holder">
+    <h1 class='main_heading'>Credit Scoring Calculator</h1>
+    <br>
+    <h3>Check Your Credit Score</h3>
+    <br>
+    <!-- START OF FORM -->
+    
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2"  for="Age">Age</label>
+        <div class="col-sm-10">
+          <input  type="number" class="form-control" id="Age" name="Age" placeholder=" Enter Your Age" onkeydown="return event.key != 'Enter';">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2">Sex</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="Sex" name="Sex" required>
+            <option selected="true" disabled="disabled" value="" >--------------    required    ------------</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2">Job</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="Job" name="Job" required>
+            <option selected="true" value="" disabled="disabled">--------------    required    ------------</option>
+            <option value=0>unemployed/ unskilled - non-resident</option>
+            <option value=1>unskilled - resident</option>
+            <option value=2>skilled employee / official</option>
+            <option value=3>management/ self-employed/ highly qualified employee/ officer</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Housing</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="Housing" name="Housing" required>
+            <option value="" disabled="disabled">--------------   required   ------------</option>
+            <option value="own">own</option>
+            <option value="free">free</option>
+            <option value="rent">rent</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Saving Account</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="saving_account" name="Saving accounts" placeholder=" Saving Account">
+              <option selected="true" value="null" disabled="disabled">--------------    options    ------------</option>
+              <option value="null">None</option>
+              <option value="little">little</option>
+              <option value="quite rich">quite rich</option>
+              <option value="moderate">moderate</option>
+              <option value="rich">rich</option>
+            </select>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Checking account</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="checking_account" name="Checking account" placeholder=" Checking account">
+              <option selected="true" value="" disabled="disabled">--------------    options    ------------</option>
+              <option value="null">None</option>
+              <option value="little">little</option>
+              <option value="moderate">moderate</option>
+              <option value="rich">rich</option>
+            </select>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Credit amount</label>
+        <div class="col-sm-10">
+          <input type=number step="0.001" class="form-control" id="credit_amount" name="Credit amount" placeholder=" Enter Your credit-amount" onkeydown="return event.key != 'Enter';" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Duration</label>
+        <div class="col-sm-10">
+          <input type="number" step="0.001" class="form-control" id="duration" name="Duration" placeholder=" Enter Duration" onkeydown="return event.key != 'Enter';" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Purpose</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="purpose" name="Purpose" required>
+              <option selected="true" value="" disabled="disabled">--------------    required    ------------</option>
+              <option value="null">None</option>
+              <option value="radio/TV">radio/TV</option>
+              <option value="education">education</option>
+              <option value="furniture/equipment">furniture/equipment</option>
+              <option value="car">car</option>
+              <option value="business">business</option>
+              <option value="domestic appliances">domestic appliances</option>
+              <option value="repairs">repairs</option>
+              <option value="vacation/others">vacation/others</option>
+            </select>
+          </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="button btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
+    <h2 class="result"></h2>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <div class="footer-copyright text-center py-3">
+    <div class="bottom">
+      <p><a href="#">Mamduh Mahfudzi        |          Credit Scoring Calculator</a></p>
+    </div>
+  </div>
+
+</footer>
+<!-- Footer -->
+
+
+  </body>
+</html>
