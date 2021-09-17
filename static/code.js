@@ -45,7 +45,7 @@ $(document).on('click','.button',function(e){
       //   });
       // });
       
-      let data = {
+      var data = {
           "Age": Age,
           "Sex": Sex, 
           "Job": Job, 
