@@ -32,17 +32,52 @@ $(document).on('click','.button',function(e){
     else{
       // replace <username> with your pythonanywhere username
       // also make sure to make changes in the url as per your flask API argument names
-      var requestURL = "https://credit-scorer.herokuapp.com/predict/?Age="+Age+"&Sex="+Sex+"&Job="+Job+"&Housing="+Housing+"&saving_account="+saving_account+"&checking_account="+checking_account+"&credit_amount="+credit_amount+"&duration="+duration+"&purpose="+purpose;
-      console.log(requestURL); // log the requestURL for troubleshooting
-      $.getJSON(requestURL, function(data) {
-        console.log(data); // log the data for troubleshooting
-        prediction = data['result'];
-        $(".result").html("Prediction is: "+prediction);
-        $(".result").css({
-          "color": "#666666",
-          "text-align": "center"
-        });
-      });
+      // var requestURL = "http://127.0.0.1:5000/predict?Age="+Age+"&Sex="+Sex+"&Job="+Job+"&Housing="+Housing+"&saving_account="+saving_account+"&checking_account="+checking_account+"&credit_amount="+credit_amount+"&duration="+duration+"&purpose="+purpose;
+      // console.log(requestURL); // log the requestURL for troubleshooting
+      
+      // $.getJSON(requestURL, function(data) {
+      //   console.log(data); // log the data for troubleshooting
+      //   prediction = data['result'];
+      //   $(".result").html("Prediction is: "+prediction);
+      //   $(".result").css({
+      //     "color": "#666666",
+      //     "text-align": "center"
+      //   });
+      // });
+      
+      let data = {
+          "Age": Age,
+          "Sex": Sex, 
+          "Job": Job, 
+          "Housing": Housing, 
+          "saving_account": saving_account, 
+          "checking_account": checking_account, 
+          "credit_amount": credit_amount, 
+          "duration": duration, 
+          "purpose": purpose
+      };
+
+      // # https://api.jquery.com/jquery.post/
+      // # https://stackoverflow.com/questions/56032972/sending-a-dictionary-from-js-to-flask-via-ajax
+      $.ajax({
+        url: 'http://127.0.0.1:5000/predict',
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({data}),
+        dataType: "json",
+        type: 'POST',
+        success: function(response){
+            // console.log(response);
+            prediction = response['result'];
+            $(".result").html("Prediction is: "+prediction);
+            $(".result").css({
+              "color": "#666666",
+              "text-align": "center"
+            });
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
       // following lines consist of action that would be taken after the request has been read
       // for now i am just changing a <h2> tag's inner html using jquery
       // you may simple do: 
