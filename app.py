@@ -41,3 +41,26 @@ def create_app():
             
         return jsonify(result)
     return app
+
+# # TIPS untuk proses raw input
+# contoh_dict = {"A" : 1, "B": 2}
+# contoh_dict.get("A") # > 1
+# contoh_dict.get("B") # > 2
+# contoh_dict.get("C", None) # > None
+
+# contoh_dict["A"] # > 1
+# contoh_dict["B"] # > 2
+# contoh_dict["C"] # > error
+
+# """ FORMAT INPUT """
+# {
+#     "A" : value_a,
+#     "B": value_b,
+#     "C": value_c
+# }
+
+# """ case """
+# {
+#     "A" : value_a,
+#     "B": value_b
+# }
